@@ -1,159 +1,199 @@
-# Turborepo starter
+# tetsugaku-app（哲学アプリ）
 
-This Turborepo starter is maintained by the Turborepo core team.
+哲学者とレスバして遊べる Web アプリ。
 
-## Using this example
+> **要件定義**: ✅ 完了（2025-06-07）
+> **実装**: ⏸️ Pencil でデザイン完成まで着手しない
 
-Run the following command:
+## コンセプト
 
-```sh
-npx create-turbo@latest
-```
+ユーザーが哲学者のペルソナと対話し、論争（レスバ）を楽しむエンターテインメント向け Web アプリ。
 
-## What's inside?
+## 技術方針
 
-This Turborepo includes the following packages/apps:
+- **フレームワーク**: TanStack Start
+- **デプロイ**: Cloudflare Pages
+- **LLM**: Chrome 内蔵のローカル Gemini（Gemini Nano / Chrome Built-in AI）
+- **パッケージ管理**: pnpm
+- **モノレポ**: Turborepo を維持（将来バックエンド追加などに備える）
+- **移行方針**: `create-turbo` 生成物（`apps/` 配下の Next.js アプリ等）を削除し、TanStack Start でクリーンスタート
 
-### Apps and Packages
+> **Note**: 現状は Turborepo + Next.js スターター。実装時に `apps/` を整理し TanStack Start アプリを新設する。
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+## 開発
 
 ```sh
-cd my-turborepo
-turbo build
+pnpm install
+pnpm dev
 ```
 
-Without global `turbo`, use your package manager:
+## レスバの進行フロー
 
-```sh
-cd my-turborepo
-npx turbo build
-pnpm dlx turbo build
-pnpm exec turbo build
+1. 哲学者を選ぶ
+2. お題を自由入力する（任意）
+   - 思い浮かばない場合は **選択式 UI** からお題を選べる
+3. フリーチャット形式で論争を続ける
+4. ラウンド制・勝敗判定はなし（MVP）
+
+## 決定事項
+
+| 項目 | 内容 | 状態 |
+|------|------|------|
+| アプリの目的 | 哲学者とレスバして遊べる Web アプリ | ✅ 決定 |
+| フレームワーク | TanStack Start（Next.js は使わない） | ✅ 決定 |
+| デプロイ | Cloudflare Pages | ✅ 決定 |
+| LLM | Chrome ローカル Gemini | ✅ 決定 |
+| 進行形式 | フリーチャット | ✅ 決定 |
+| お題 | 自由入力 + 選択式 UI（お題に困ったとき用） | ✅ 決定 |
+| 勝敗判定 | なし（自由に議論） | ✅ 決定 |
+| 哲学者 | 固定 4 人（ソクラテス・プラトン・カント・ニーチェ）、将来拡張 | ✅ 決定 |
+| お題の方向性 | 私生活・身近な生活感のある話題（具体リストは後日） | ✅ 決定 |
+| データ保存 | MVP では保存しない。将来 backend + インフラで履歴保存 | ✅ 決定 |
+| 履歴一覧 | MVP から除外（保存機能とセットで将来実装） | ✅ 決定 |
+| ブラウザ対応 | Chrome 専用、非対応時は案内表示 | ✅ 決定 |
+| リポジトリ構成 | Turborepo 維持 + クリーンスタート（`apps/` スターター削除） | ✅ 決定 |
+| UI | Tailwind CSS + shadcn/ui | ✅ 決定 |
+| テーマ | MVP はライトのみ、将来切替対応の余地を残す | ✅ 決定 |
+| モノレポ構成 | `apps/{web,backend}` + `packages/{common,ui,tsconfig}` | ✅ 決定 |
+| MVP スコープ | `backend` は未実装。`web` + `packages` のみ | ✅ 決定 |
+| 言語 | 日本語のみ | ✅ 決定 |
+| LLM 応答表示 | ストリーミング生成 + ローディング → 完了後に一括表示 | ✅ 決定 |
+| 離脱時 UX | 注意表示 + 離脱確認ダイアログ | ✅ 決定 |
+| LLM 未準備時 | 起動時チェック + 案内画面 | ✅ 決定 |
+| 哲学者選択 UI | イラスト / 肖像 + 説明カード | ✅ 決定 |
+| 肖像画像 | AI 生成 + 選定、画風統一 | ✅ 決定 |
+| お題カテゴリ | 5 カテゴリ（人間関係 / 仕事・キャリア / SNS・現代生活 / 自分自身 / 恋愛・性） | ✅ 決定 |
+| トップ画面 | 説明 + CTA（キャッチコピー・3 ステップ・開始ボタン・注記） | ✅ 決定 |
+| 将来 backend | Hono on Cloudflare Workers | ✅ 決定 |
+| 将来 DB | 履歴機能実装時に決定（第一候補: Turso） | ✅ 決定 |
+
+## 哲学者（MVP）
+
+固定 4 人で開始。将来カテゴリ追加・拡張予定。
+
+| 哲学者 | レスバでの特徴（想定） |
+|--------|------------------------|
+| ソクラテス | 問答法で論点を剥がす。相手を問い詰める |
+| プラトン | イデア論・正義を軸に理想主義的に論じる |
+| カント | 冷静・論理的。義務論・理性を重視 |
+| ニーチェ | 挑発的・攻撃的。既存の価値観を否定する |
+
+## お題の方針
+
+- **お題の内容**: 抽象論より **私生活・身近な生活感のある話題** を中心にする
+- 選択式 UI は **5 カテゴリ** で分類（具体リストは後日決定）
+
+### お題カテゴリ（MVP）
+
+| カテゴリ | 方向性 |
+|----------|--------|
+| 人間関係 | 恋人・友人・家族 |
+| 仕事・キャリア | 働き方・モチベーション |
+| SNS・現代生活 | デジタル社会の違和感 |
+| 自分自身 | 自己肯定・不安・成長 |
+| 恋愛・性 | より個人的なテーマ |
+
+## データ永続化
+
+- **MVP**: 会話・履歴は保存しない（リロードで消える）
+- **将来**: `apps/backend` + インフラで履歴保存・一覧・再開を実装
+
+## 画面構成（MVP）
+
+1. **トップ** — キャッチコピー + 使い方（3 ステップ）+ 「論争を始める」ボタン + 注記（Chrome 専用・保存なし）
+2. **哲学者選択** — 4 人から選ぶ
+3. **お題入力** — 自由入力 + 選択式 UI
+4. **チャット画面** — フリーチャットでレスバ
+
+## ブラウザ対応
+
+- **Chrome 専用**（ローカル Gemini 利用のため）
+- 非対応ブラウザでは案内画面を表示（Chrome 推奨バージョン・モデル設定手順を案内）
+- フォールバック API は MVP では実装しない
+
+## UI・スタイリング
+
+- **Tailwind CSS + shadcn/ui**
+- チャット UI・履歴カード・フォーム類は shadcn/ui コンポーネントを活用
+- **テーマ**: MVP はライトモードのみ。将来ダーク / ライト切替に対応できる設計にする
+
+## モノレポ構成
+
+```
+apps/
+  web/          # TanStack Start（フロントエンド）
+  backend/      # バックエンド（将来）
+packages/
+  common/       # 共有ロジック・型定義
+  ui/           # 共有 UI コンポーネント
+  tsconfig/     # 共有 TypeScript 設定
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+## MVP スコープ
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+- `apps/web` + `packages/{common,ui,tsconfig}` のみ実装
+- `apps/backend` は MVP では作らない（将来追加）
 
-```sh
-turbo build --filter=docs
-```
+## 言語
 
-Without global `turbo`:
+- **日本語のみ**（UI・哲学者の返答・お題すべて）
+- 哲学者は現代日本語で論じる（思想・論調は各ペルソナを維持）
 
-```sh
-npx turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+## LLM 応答表示
 
-### Develop
+- 内部ではストリーミング生成
+- UI では生成中はローディングアニメーションを表示
+- 全文生成完了後にまとめて表示（トークン逐次表示はしない）
 
-To develop all apps and packages, run the following command:
+## リロード・離脱時の UX
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+- チャット画面に「会話は保存されません」の注意表示
+- ページ離脱時（タブ閉じ・戻る等）に確認ダイアログ
+- リロードすると会話は消える
 
-```sh
-cd my-turborepo
-turbo dev
-```
+## Chrome ローカル LLM 未準備時
 
-Without global `turbo`, use your package manager:
+- **起動時に API 可用性をチェック**
+- 利用不可の場合は案内画面を表示（チャット機能は使えない）
+- 案内内容: 対応 Chrome バージョン、AI 機能有効化手順、モデルダウンロードの案内
 
-```sh
-cd my-turborepo
-npx turbo dev
-pnpm exec turbo dev
-pnpm exec turbo dev
-```
+## 哲学者選択 UI
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+- **イラスト / 肖像** で各哲学者を表現
+- カードに名前・キャッチコピー・論じ方の説明を併記
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+## 肖像画像
 
-```sh
-turbo dev --filter=web
-```
+- **AI 生成 + 選定** で 4 人分を用意
+- 画風を統一（例: シンプルな bust スタイル）
+- 配置先: `apps/web/public/philosophers/`（想定）
+- 利用した生成ツール・規約を README に記録
 
-Without global `turbo`:
+## 将来のバックエンド（履歴保存時）
 
-```sh
-npx turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
+- **フレームワーク**: Hono（✅ 決定）
+- **ランタイム**: Cloudflare Workers を想定
+- **DB**: 履歴機能実装時に決定（第一候補: Turso。D1 / Supabase も比較対象）
 
-### Remote Caching
+## 未決定事項（実装前に決める）
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+- 選択式お題の具体リスト（カテゴリごとの文言）
+- 将来の DB 最終選定（履歴機能着手時）
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## デザイン・実装の進め方
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+1. **Pencil** で画面デザインを作り込む（ユーザー作業）
+2. デザイン確定後にクリーンスタート（`apps/` スターター削除 → TanStack Start 新設）
+3. Pencil のデザインに沿って UI を実装する
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+- クリーンスタート: ✅ 方針承認済み
+- UI 実装: デザイン確定まで **着手しない**
 
-```sh
-cd my-turborepo
-turbo login
-```
+## MVP 完了条件（チェックリスト）
 
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo login
-pnpm exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-pnpm exec turbo link
-pnpm exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+- [ ] Chrome でローカル Gemini が動作し、4 人の哲学者と日本語でレスバできる
+- [ ] トップ → 哲学者選択 → お題入力 → チャットの 4 画面が動く
+- [ ] お題を自由入力できる + 5 カテゴリから選択できる
+- [ ] 非 Chrome / LLM 未準備時に案内画面が表示される
+- [ ] チャット中の離脱確認・「保存されません」表示がある
+- [ ] Cloudflare Pages にデプロイできる
