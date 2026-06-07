@@ -28,15 +28,14 @@ export function PhilosophersPage() {
       <PageBackHeader backTo={ROUTES.home} />
 
       <main className="mx-auto flex max-w-[1152px] flex-col items-center gap-3 px-6 py-3 md:px-16">
-        <div className="shadow-[6px_6px_0_#FF6B00]">
-          <BrandingImage
-            src="/branding/select-title.png"
-            alt="対戦相手を選べ!!"
-            width={1020}
-            height={333}
-            className="h-auto w-full max-w-[560px] -rotate-1"
-          />
-        </div>
+        <BrandingImage
+          src="/branding/select-title.png"
+          alt="対戦相手を選べ!!"
+          width={1792}
+          height={592}
+          className="h-auto w-full max-w-[560px] -rotate-1"
+        />
+
 
         <p className="max-w-[600px] text-center text-sm font-bold text-text-primary">
           4人の哲学者から、今日の対戦相手を選べ

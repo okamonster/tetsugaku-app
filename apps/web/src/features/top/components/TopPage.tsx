@@ -33,8 +33,8 @@ export function TopPage() {
         <BrandingImage
           src="/branding/hero-resuba.png"
           alt="哲学者と、レスバ!!"
-          width={1060}
-          height={402}
+          width={1664}
+          height={640}
           className="h-auto w-full max-w-[509px]"
         />
 
