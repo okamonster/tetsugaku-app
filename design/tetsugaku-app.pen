@@ -1,0 +1,3298 @@
+{
+  "version": "2.13",
+  "children": [
+    {
+      "type": "frame",
+      "id": "XIc1i",
+      "x": 0,
+      "y": 0,
+      "name": "Button/Primary",
+      "reusable": true,
+      "fill": "$battle-red",
+      "cornerRadius": "$radius-pill",
+      "stroke": "#1A1A1A",
+      "strokeWidth": 3,
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#1A1A1A",
+        "offset": {
+          "x": 4,
+          "y": 4
+        }
+      },
+      "gap": 8,
+      "padding": [
+        16,
+        32
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "E8WIs",
+          "name": "Label",
+          "fill": "$text-inverse",
+          "content": "ボタン",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fontWeight": "800"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "JMWnx",
+      "x": 0,
+      "y": -88,
+      "name": "Button/Outline",
+      "reusable": true,
+      "fill": "#00000000",
+      "cornerRadius": "$radius-pill",
+      "stroke": "$border-strong",
+      "strokeWidth": 2,
+      "gap": 8,
+      "padding": [
+        12,
+        20
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "l8b8Aw",
+          "name": "Label",
+          "fill": "$text-primary",
+          "content": "ボタン",
+          "fontFamily": "Inter",
+          "fontSize": 15,
+          "fontWeight": "500"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "A1DGPS",
+      "x": 0,
+      "y": -448,
+      "name": "PhilosopherCard",
+      "reusable": true,
+      "width": 280,
+      "fill": "$bg-card",
+      "cornerRadius": 20,
+      "stroke": "$border-default",
+      "strokeWidth": 3,
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#1A1A1A40",
+        "offset": {
+          "x": 4,
+          "y": 4
+        }
+      },
+      "layout": "vertical",
+      "gap": 8,
+      "padding": 18,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "WlR8E",
+          "name": "Avatar",
+          "width": 112,
+          "height": 112,
+          "fill": "$bg-muted",
+          "cornerRadius": 9999,
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "xu0Be",
+              "name": "AvatarIcon",
+              "width": 40,
+              "height": 40,
+              "icon": "user",
+              "library": "lucide",
+              "fill": "$text-tertiary"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "cMjU3",
+          "name": "Name",
+          "fill": "$text-primary",
+          "content": "ソクラテス",
+          "fontFamily": "Inter",
+          "fontSize": 22,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "Dpeb2",
+          "name": "Catch",
+          "fill": "$accent-primary",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "「無知の知」で問い詰める",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "800"
+        },
+        {
+          "type": "text",
+          "id": "Bd0hT",
+          "name": "Description",
+          "fill": "$text-secondary",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "問答法で論点を剥がす。相手を問い詰める",
+          "lineHeight": 1.5,
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "i3lGrV",
+      "x": 0,
+      "y": -608,
+      "name": "StepCard",
+      "reusable": true,
+      "width": 360,
+      "fill": "$bg-card",
+      "cornerRadius": 16,
+      "stroke": "$border-strong",
+      "strokeWidth": 2,
+      "gap": 16,
+      "padding": 20,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "w9nhA1",
+          "name": "StepNumber",
+          "width": 44,
+          "height": 44,
+          "fill": "$battle-red",
+          "cornerRadius": 9999,
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "CSew9",
+              "name": "Number",
+              "fill": "$text-inverse",
+              "content": "1",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "900"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "s3Moq2",
+          "name": "StepBody",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 4,
+          "children": [
+            {
+              "type": "text",
+              "id": "VSUG4",
+              "name": "Title",
+              "fill": "$text-primary",
+              "content": "哲学者を選ぶ",
+              "fontFamily": "Inter",
+              "fontSize": 17,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "r8bngt",
+              "name": "Description",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "4人の思想家から対戦相手を選びます",
+              "lineHeight": 1.4,
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "KvPAJ",
+      "x": 0,
+      "y": -696,
+      "name": "Alert/Warning",
+      "reusable": true,
+      "width": 600,
+      "fill": "#FFF7ED",
+      "cornerRadius": "$radius-md",
+      "stroke": "$accent-primary",
+      "strokeWidth": 1,
+      "gap": 10,
+      "padding": [
+        12,
+        16
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "icon",
+          "id": "LTxjr",
+          "name": "Icon",
+          "width": 18,
+          "height": 18,
+          "icon": "triangle-alert",
+          "library": "lucide",
+          "fill": "$semantic-warning-text"
+        },
+        {
+          "type": "text",
+          "id": "tQMaB",
+          "name": "Message",
+          "fill": "$semantic-warning-text",
+          "textGrowth": "fixed-width",
+          "width": "fill_container",
+          "content": "会話は保存されません",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "500"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ar3si",
+      "x": 0,
+      "y": -772,
+      "name": "CategoryChip",
+      "reusable": true,
+      "rotation": -2,
+      "fill": "#FFFFFF",
+      "cornerRadius": "$radius-pill",
+      "stroke": "$border-strong",
+      "strokeWidth": 2,
+      "gap": 6,
+      "padding": [
+        8,
+        14
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "text",
+          "id": "X1pRo",
+          "name": "Label",
+          "fill": "$text-secondary",
+          "content": "人間関係",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "700"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "L5Anx9",
+      "x": 0,
+      "y": -892,
+      "name": "Message/User",
+      "reusable": true,
+      "width": 400,
+      "justifyContent": "end",
+      "children": [
+        {
+          "type": "frame",
+          "id": "PA354",
+          "name": "Bubble",
+          "width": 280,
+          "fill": "$accent-primary",
+          "cornerRadius": [
+            "$radius-lg",
+            "$radius-lg",
+            4,
+            "$radius-lg"
+          ],
+          "layout": "vertical",
+          "padding": [
+            12,
+            16
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "qVnXZ",
+              "name": "Text",
+              "fill": "$text-inverse",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "SNSで他人の生活と比べてしまうのは自然なこと？",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "jGBHe",
+      "x": 0,
+      "y": -1052,
+      "name": "Message/Philosopher",
+      "reusable": true,
+      "width": 400,
+      "gap": 12,
+      "children": [
+        {
+          "type": "frame",
+          "id": "v1S71",
+          "name": "Avatar",
+          "width": 36,
+          "height": 36,
+          "fill": "#EDE9FE",
+          "cornerRadius": 9999,
+          "stroke": "$philosopher-plato",
+          "strokeWidth": 2,
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon",
+              "id": "j7dxRO",
+              "name": "Icon",
+              "width": 18,
+              "height": 18,
+              "icon": "user",
+              "library": "lucide",
+              "fill": "$text-tertiary"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "U8ZLo",
+          "name": "Bubble",
+          "width": 320,
+          "fill": "$bg-card",
+          "cornerRadius": [
+            4,
+            16,
+            16,
+            16
+          ],
+          "stroke": "$philosopher-plato",
+          "strokeWidth": {
+            "top": 1,
+            "right": 1,
+            "bottom": 1,
+            "left": 4
+          },
+          "layout": "vertical",
+          "padding": [
+            12,
+            16
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "q7l21n",
+              "name": "Text",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "その比較は、本当にあなた自身の問いですか？",
+              "lineHeight": 1.5,
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "JZNRz",
+          "name": "NameBadge",
+          "fill": "#EDE9FE",
+          "cornerRadius": 9999,
+          "padding": [
+            4,
+            10
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "kckyw",
+              "name": "PhilosopherName",
+              "fill": "$philosopher-plato",
+              "content": "プラトン",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "800"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "w4jVTD",
+      "x": 680,
+      "y": -1052,
+      "name": "01-トップ",
+      "clip": true,
+      "width": 1280,
+      "height": 800,
+      "fill": "#F0EEEB",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "NuNEb",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "q6zfq",
+              "name": "Logo",
+              "height": 52,
+              "gap": 10,
+              "padding": [
+                4,
+                0
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "fufCB",
+                  "type": "ref",
+                  "ref": "W2Iok2",
+                  "name": "LogoSymbol"
+                },
+                {
+                  "id": "K1uOt",
+                  "type": "ref",
+                  "ref": "i50nIu",
+                  "name": "WordmarkSVG",
+                  "width": 249,
+                  "height": 52
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "iJgwz",
+              "name": "ChromeNote",
+              "fill": "$text-tertiary",
+              "content": "Chrome 専用",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "500"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HmeF4",
+          "name": "Hero",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            24,
+            80,
+            16,
+            80
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "t3Swgy",
+              "layoutPosition": "absolute",
+              "x": 0,
+              "y": 0,
+              "name": "HeroBackground",
+              "width": 1280,
+              "height": 728,
+              "layout": "none"
+            },
+            {
+              "id": "y5pHz",
+              "type": "ref",
+              "ref": "a3Owb",
+              "name": "HeroTitleSVG",
+              "width": 509,
+              "height": 193
+            },
+            {
+              "type": "text",
+              "id": "M57iHY",
+              "name": "HeroSubtitle",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 560,
+              "content": "ソクラテス、プラトン、カント、ニーチェ——\n身近なモヤモヤを、今日の論点でぶつけろ。",
+              "lineHeight": 1.6,
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "dA6nX",
+              "name": "Steps",
+              "width": "fill_container",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "id": "D4Gmxj",
+                  "type": "ref",
+                  "ref": "i3lGrV",
+                  "name": "Step1",
+                  "width": 360,
+                  "descendants": {
+                    "CSew9": {
+                      "content": "1"
+                    },
+                    "VSUG4": {
+                      "content": "誰とレスバする？"
+                    },
+                    "r8bngt": {
+                      "content": "4人の哲学者から対戦相手を選ぶ"
+                    }
+                  }
+                },
+                {
+                  "id": "vMNoc",
+                  "type": "ref",
+                  "ref": "i3lGrV",
+                  "name": "Step2",
+                  "width": 360,
+                  "descendants": {
+                    "CSew9": {
+                      "content": "2"
+                    },
+                    "VSUG4": {
+                      "content": "お題を決める"
+                    },
+                    "r8bngt": {
+                      "content": "自由入力 or カテゴリから選ぶ"
+                    }
+                  }
+                },
+                {
+                  "id": "G65fw",
+                  "type": "ref",
+                  "ref": "i3lGrV",
+                  "name": "Step3",
+                  "width": 360,
+                  "descendants": {
+                    "CSew9": {
+                      "content": "3"
+                    },
+                    "VSUG4": {
+                      "content": "好きなだけ論じる"
+                    },
+                    "r8bngt": {
+                      "content": "勝敗なし。気になったらずっと続けてOK"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "nLZew",
+              "type": "ref",
+              "ref": "XIc1i",
+              "name": "CTA",
+              "descendants": {
+                "E8WIs": {
+                  "content": "バトル開始!!"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "Tw3Gb",
+              "name": "Stamps",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "SA8ku",
+                  "name": "StampChrome",
+                  "rotation": -4,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 4,
+                  "stroke": "$battle-cyan",
+                  "strokeWidth": 2.5,
+                  "layout": "vertical",
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Uf3Ts",
+                      "name": "StampChromeText",
+                      "fill": "$text-primary",
+                      "content": "Chrome 専用",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "800"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fCBjA",
+                  "name": "StampFree",
+                  "rotation": 3.0000000000000004,
+                  "fill": "$battle-red",
+                  "cornerRadius": 4,
+                  "stroke": "$border-strong",
+                  "strokeWidth": 2,
+                  "layout": "vertical",
+                  "padding": [
+                    8,
+                    14
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ssYJU",
+                      "name": "StampFreeText",
+                      "fill": "$text-inverse",
+                      "content": "完全無料",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "800"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "RbXOQ",
+          "name": "Footer",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 8,
+          "padding": [
+            0,
+            48,
+            32,
+            48
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "HVoaY",
+              "name": "Note1",
+              "fill": "$text-tertiary",
+              "content": "※ Chrome 内蔵 AI（Gemini Nano）が必要です",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "OzfKi",
+              "name": "Note2",
+              "fill": "$text-tertiary",
+              "content": "※ 会話は保存されません。リロードすると消えます",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "id": "lkgSu",
+          "type": "ref",
+          "ref": "e47dPD",
+          "name": "GrungeOverlay",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 800,
+          "enabled": false,
+          "descendants": {
+            "ndFI5": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "XmK6X",
+      "x": 2040,
+      "y": -1052,
+      "name": "02-哲学者選択",
+      "clip": true,
+      "width": 1280,
+      "height": 800,
+      "fill": "#F0EEEB",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "L4I70",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "stroke": "$border-strong",
+          "strokeWidth": {
+            "bottom": 2
+          },
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "BcG0x",
+              "type": "ref",
+              "ref": "JMWnx",
+              "name": "Back",
+              "descendants": {
+                "l8b8Aw": {
+                  "content": "← 戻る"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "EnVhn",
+              "name": "Spacer",
+              "width": 100,
+              "height": 1,
+              "fill": "#00000000"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "C1xoA",
+          "name": "Body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            12,
+            64,
+            16,
+            64
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "PcAsR",
+              "name": "SelectBattlePanel",
+              "rotation": -1,
+              "width": 600,
+              "height": 110,
+              "fill": "#00000000",
+              "cornerRadius": 4,
+              "stroke": "#00000000",
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "$battle-orange",
+                "offset": {
+                  "x": 6,
+                  "y": 6
+                }
+              },
+              "padding": [
+                8,
+                12
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "id": "y3Gjej",
+                  "type": "ref",
+                  "ref": "mqzth",
+                  "name": "SelectTitleSVG",
+                  "width": 560,
+                  "height": 120
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "Bsvdd",
+              "name": "Subtitle",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "4人の哲学者から、今日の対戦相手を選べ",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "H6n5yQ",
+              "name": "Grid",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "j3TC7",
+                  "name": "Row1",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "id": "R4SWf",
+                      "type": "ref",
+                      "ref": "A1DGPS",
+                      "name": "Socrates",
+                      "rotation": -3.0000000000000004,
+                      "stroke": "$philosopher-socrates",
+                      "strokeWidth": 3,
+                      "width": 268,
+                      "descendants": {
+                        "WlR8E": {
+                          "fill": "#DBEAFE",
+                          "width": 80,
+                          "height": 80
+                        },
+                        "cMjU3": {
+                          "content": "ソクラテス"
+                        },
+                        "Dpeb2": {
+                          "content": "「本当にそれ、わかってる？」",
+                          "fill": "$philosopher-socrates",
+                          "fontSize": 12
+                        },
+                        "Bd0hT": {
+                          "content": "問答法で論点を剥がす",
+                          "fontSize": 12
+                        }
+                      }
+                    },
+                    {
+                      "id": "j7PUar",
+                      "type": "ref",
+                      "ref": "A1DGPS",
+                      "name": "Plato",
+                      "stroke": "$philosopher-plato",
+                      "strokeWidth": 4,
+                      "rotation": 0,
+                      "width": 268,
+                      "descendants": {
+                        "WlR8E": {
+                          "fill": "#EDE9FE",
+                          "width": 80,
+                          "height": 80
+                        },
+                        "cMjU3": {
+                          "content": "プラトン"
+                        },
+                        "Dpeb2": {
+                          "content": "「理想の答え、あると思う？」",
+                          "fill": "$philosopher-plato",
+                          "fontSize": 12
+                        },
+                        "Bd0hT": {
+                          "content": "イデア論・正義を軸に論じる",
+                          "fontSize": 12
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Fx3Dj",
+                  "name": "Row2",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "id": "vmzL9",
+                      "type": "ref",
+                      "ref": "A1DGPS",
+                      "name": "Kant",
+                      "rotation": 2,
+                      "stroke": "$philosopher-kant",
+                      "strokeWidth": 3,
+                      "width": 268,
+                      "descendants": {
+                        "WlR8E": {
+                          "fill": "#F1F5F9",
+                          "width": 80,
+                          "height": 80
+                        },
+                        "cMjU3": {
+                          "content": "カント"
+                        },
+                        "Dpeb2": {
+                          "content": "「それ、理性で説明できる？」",
+                          "fill": "$philosopher-kant",
+                          "fontSize": 12
+                        },
+                        "Bd0hT": {
+                          "content": "義務論・理性を重視",
+                          "fontSize": 12
+                        }
+                      }
+                    },
+                    {
+                      "id": "PrQ0H",
+                      "type": "ref",
+                      "ref": "A1DGPS",
+                      "name": "Nietzsche",
+                      "rotation": -2,
+                      "stroke": "$philosopher-nietzsche",
+                      "strokeWidth": 3,
+                      "width": 268,
+                      "descendants": {
+                        "WlR8E": {
+                          "fill": "#FEE2E2",
+                          "width": 80,
+                          "height": 80
+                        },
+                        "cMjU3": {
+                          "content": "ニーチェ"
+                        },
+                        "Dpeb2": {
+                          "content": "「その常識、もう古くない？」",
+                          "fill": "$philosopher-nietzsche",
+                          "fontSize": 12
+                        },
+                        "Bd0hT": {
+                          "content": "挑発的に価値観を問い直す",
+                          "fontSize": 12
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dagyE",
+              "name": "Actions",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "id": "wB0Ho",
+                  "type": "ref",
+                  "ref": "XIc1i",
+                  "name": "Next",
+                  "descendants": {
+                    "E8WIs": {
+                      "content": "この相手とバトル!! →"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "h8n09",
+          "type": "ref",
+          "ref": "e47dPD",
+          "name": "GrungeOverlay",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 800
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "VxiZH",
+      "x": 3400,
+      "y": -1052,
+      "name": "03-お題入力",
+      "clip": true,
+      "width": 1280,
+      "height": 800,
+      "fill": "$bg-primary",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "pQ8uD",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "E335E",
+              "type": "ref",
+              "ref": "JMWnx",
+              "name": "Back",
+              "descendants": {
+                "l8b8Aw": {
+                  "content": "← 戻る"
+                }
+              }
+            },
+            {
+              "type": "text",
+              "id": "sK2dy",
+              "name": "Title",
+              "fill": "$text-primary",
+              "content": "お題を決めよう",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "900"
+            },
+            {
+              "type": "frame",
+              "id": "nMl6G",
+              "name": "PhilosopherBadge",
+              "fill": "$bg-card",
+              "cornerRadius": "$radius-pill",
+              "stroke": "$philosopher-plato",
+              "strokeWidth": 2,
+              "gap": 8,
+              "padding": [
+                8,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "UR2I6",
+                  "name": "Avatar",
+                  "width": 24,
+                  "height": 24,
+                  "fill": "$bg-muted",
+                  "cornerRadius": 9999,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "y5jWdB",
+                      "name": "Icon",
+                      "width": 14,
+                      "height": 14,
+                      "icon": "user",
+                      "library": "lucide",
+                      "fill": "$text-tertiary"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "g6QLRN",
+                  "name": "Name",
+                  "fill": "$philosopher-plato",
+                  "content": "プラトン",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v3COx",
+          "name": "Body",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            32,
+            120,
+            40,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "wyIW2",
+              "name": "InputSection",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "b9f6R",
+                  "name": "Label",
+                  "fill": "$text-primary",
+                  "content": "自由に書く",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "kr9As",
+                  "name": "InputBox",
+                  "width": "fill_container",
+                  "height": 120,
+                  "fill": "$bg-card",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border-default",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "M7zpr",
+                      "name": "Placeholder",
+                      "fill": "$text-tertiary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "例：SNSで他人の生活と比べてしまうのは自然なこと？",
+                      "lineHeight": 1.5,
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wFz9E",
+              "name": "Divider",
+              "width": 720,
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "M8HpIx",
+                  "name": "Line",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "$border-default"
+                },
+                {
+                  "type": "text",
+                  "id": "pTBc2",
+                  "name": "Or",
+                  "fill": "$text-tertiary",
+                  "content": "お題に困ったらここから",
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "P2pKHc",
+                  "name": "Line",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "$border-default"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Nwj9d",
+              "name": "CategorySection",
+              "width": 720,
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "iIWsI",
+                  "name": "CatLabel",
+                  "fill": "$text-primary",
+                  "content": "カテゴリから選ぶ",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "H9n5xb",
+                  "name": "Chips",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "id": "MNRHf",
+                      "type": "ref",
+                      "ref": "ar3si",
+                      "name": "人間関係",
+                      "fill": "$accent-primary",
+                      "stroke": "$accent-primary",
+                      "descendants": {
+                        "X1pRo": {
+                          "content": "人間関係",
+                          "fill": "$text-inverse"
+                        }
+                      }
+                    },
+                    {
+                      "id": "yO75L",
+                      "type": "ref",
+                      "ref": "ar3si",
+                      "name": "仕事・キャリア",
+                      "descendants": {
+                        "X1pRo": {
+                          "content": "仕事・キャリア"
+                        }
+                      }
+                    },
+                    {
+                      "id": "BcAWP",
+                      "type": "ref",
+                      "ref": "ar3si",
+                      "name": "SNS・現代生活",
+                      "descendants": {
+                        "X1pRo": {
+                          "content": "SNS・現代生活"
+                        }
+                      }
+                    },
+                    {
+                      "id": "PY0bB",
+                      "type": "ref",
+                      "ref": "ar3si",
+                      "name": "自分自身",
+                      "descendants": {
+                        "X1pRo": {
+                          "content": "自分自身"
+                        }
+                      }
+                    },
+                    {
+                      "id": "T9IuU",
+                      "type": "ref",
+                      "ref": "ar3si",
+                      "name": "恋愛・性",
+                      "descendants": {
+                        "X1pRo": {
+                          "content": "恋愛・性"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "slN15",
+                  "name": "TopicList",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "wL5AK",
+                      "name": "TopicItem",
+                      "width": "fill_container",
+                      "fill": "$bg-card",
+                      "cornerRadius": "$radius-md",
+                      "stroke": "$border-default",
+                      "strokeWidth": 1,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "iDFju",
+                          "name": "Text",
+                          "fill": "$text-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "友人との距離感、どこまで許容すべき？",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "p2AbPg",
+                          "name": "Arrow",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "chevron-right",
+                          "library": "lucide",
+                          "fill": "$text-tertiary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "M06su",
+                      "name": "TopicItem",
+                      "width": "fill_container",
+                      "fill": "$bg-card",
+                      "cornerRadius": "$radius-md",
+                      "stroke": "$border-default",
+                      "strokeWidth": 1,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "pzxO1",
+                          "name": "Text",
+                          "fill": "$text-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "LINEの既読スルーは許される？",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "a2wVm",
+                          "name": "Arrow",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "chevron-right",
+                          "library": "lucide",
+                          "fill": "$text-tertiary"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QQE6x",
+                      "name": "TopicItem",
+                      "width": "fill_container",
+                      "fill": "$bg-card",
+                      "cornerRadius": "$radius-md",
+                      "stroke": "$border-default",
+                      "strokeWidth": 1,
+                      "padding": [
+                        14,
+                        16
+                      ],
+                      "justifyContent": "space_between",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "awsql",
+                          "name": "Text",
+                          "fill": "$text-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "親との価値観の違い、どう向き合う？",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "icon",
+                          "id": "tUCa4",
+                          "name": "Arrow",
+                          "width": 18,
+                          "height": 18,
+                          "icon": "chevron-right",
+                          "library": "lucide",
+                          "fill": "$text-tertiary"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "NYl82",
+              "type": "ref",
+              "ref": "XIc1i",
+              "name": "Start",
+              "descendants": {
+                "E8WIs": {
+                  "content": "このお題でレスバ開始 →"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "EocKu",
+      "x": 4760,
+      "y": -1052,
+      "name": "04-チャット",
+      "clip": true,
+      "width": 1280,
+      "height": 800,
+      "fill": "$bg-primary",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "NxA2G",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 72,
+          "stroke": "$border-strong",
+          "strokeWidth": {
+            "bottom": 2
+          },
+          "padding": [
+            0,
+            48
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "eRxGR",
+              "type": "ref",
+              "ref": "JMWnx",
+              "name": "Back",
+              "descendants": {
+                "l8b8Aw": {
+                  "content": "← 終了"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "FWBcn",
+              "name": "ChatTitle",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "gqntY",
+                  "name": "Avatar",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#EDE9FE",
+                  "cornerRadius": 9999,
+                  "stroke": "$philosopher-plato",
+                  "strokeWidth": 2,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "Go5dW",
+                      "name": "Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "user",
+                      "library": "lucide",
+                      "fill": "$text-tertiary"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "ssHnV",
+                  "name": "Name",
+                  "fill": "$philosopher-plato",
+                  "content": "プラトン",
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Z4akMi",
+              "name": "TopicBadge",
+              "fill": "#FFFFFF",
+              "cornerRadius": "$radius-pill",
+              "stroke": "$border-strong",
+              "strokeWidth": 1,
+              "gap": 6,
+              "padding": [
+                6,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "PsACo",
+                  "name": "Icon",
+                  "width": 14,
+                  "height": 14,
+                  "icon": "message-circle",
+                  "library": "lucide",
+                  "fill": "$text-tertiary"
+                },
+                {
+                  "type": "text",
+                  "id": "A6EJy3",
+                  "name": "Topic",
+                  "fill": "$text-secondary",
+                  "content": "SNSで他人と比べること",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "YoRuH",
+          "type": "ref",
+          "ref": "KvPAJ",
+          "name": "Warning",
+          "width": "fill_container",
+          "descendants": {
+            "tQMaB": {
+              "content": "⚠ 会話は保存されません。リロードしたら消えるよ"
+            }
+          }
+        },
+        {
+          "type": "frame",
+          "id": "DCfpa",
+          "name": "ChatBody",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            24,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "Dk6h7",
+              "type": "ref",
+              "ref": "L5Anx9",
+              "name": "UserMsg1",
+              "width": 720,
+              "descendants": {
+                "qVnXZ": {
+                  "content": "SNSで他人の生活と比べてしまうのは、自然なことだと思う"
+                }
+              }
+            },
+            {
+              "id": "Xb8k4",
+              "type": "ref",
+              "ref": "jGBHe",
+              "name": "PhilMsg1",
+              "width": 720,
+              "descendants": {
+                "q7l21n": {
+                  "content": "その比較は、本当にあなた自身の問いですか？　それとも、他人が作った「正しさ」の幻影に従っているだけでは？"
+                }
+              }
+            },
+            {
+              "type": "frame",
+              "id": "U5IHC1",
+              "name": "Loading",
+              "width": 720,
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "E5MAoD",
+                  "name": "Avatar",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#EDE9FE",
+                  "cornerRadius": 9999,
+                  "stroke": "$philosopher-plato",
+                  "strokeWidth": 2,
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "gXyek",
+                      "name": "Icon",
+                      "width": 18,
+                      "height": 18,
+                      "icon": "user",
+                      "library": "lucide",
+                      "fill": "$text-tertiary"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zBBC7",
+                  "name": "Bubble",
+                  "fill": "$bg-card",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border-default",
+                  "strokeWidth": 1,
+                  "gap": 6,
+                  "padding": [
+                    14,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "ellipse",
+                      "id": "fZgCH",
+                      "name": "Dot1",
+                      "fill": "$text-tertiary",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "wHfT2",
+                      "name": "Dot2",
+                      "fill": "$text-tertiary",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "Q1dkxZ",
+                      "name": "Dot3",
+                      "fill": "$text-tertiary",
+                      "width": 8,
+                      "height": 8
+                    },
+                    {
+                      "type": "text",
+                      "id": "F1kY5",
+                      "name": "Text",
+                      "fill": "$text-tertiary",
+                      "content": "考え中...",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "zwAOS",
+          "name": "InputArea",
+          "width": "fill_container",
+          "stroke": "$border-default",
+          "strokeWidth": {
+            "top": 1
+          },
+          "gap": 12,
+          "padding": [
+            16,
+            48,
+            24,
+            48
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "T7iTs5",
+              "name": "InputField",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "$bg-card",
+              "cornerRadius": "$radius-pill",
+              "stroke": "$border-default",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "padding": [
+                0,
+                16
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cZ73i",
+                  "name": "Placeholder",
+                  "fill": "$text-tertiary",
+                  "content": "反論を送る...",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Jtx6Q",
+              "name": "SendButton",
+              "width": 52,
+              "height": 52,
+              "fill": "$accent-primary",
+              "cornerRadius": 9999,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A1A1A",
+                "offset": {
+                  "x": 2,
+                  "y": 2
+                }
+              },
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "cJlHt",
+                  "name": "Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "send",
+                  "library": "lucide",
+                  "fill": "$text-inverse"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "m1qJk",
+      "x": 6120,
+      "y": -1052,
+      "name": "05-Chrome非対応",
+      "clip": true,
+      "width": 1280,
+      "height": 800,
+      "fill": "$bg-primary",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "RGVCQ",
+          "name": "Center",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            0,
+            120
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "g5obW",
+              "name": "SocratesAvatar",
+              "width": 120,
+              "height": 120,
+              "fill": "#DBEAFE",
+              "cornerRadius": 9999,
+              "stroke": "$philosopher-socrates",
+              "strokeWidth": 4,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "DCU6r",
+                  "name": "SocratesIcon",
+                  "width": 48,
+                  "height": 48,
+                  "icon": "user",
+                  "library": "lucide",
+                  "fill": "$philosopher-socrates"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UY4Cs",
+              "name": "SocratesSpeech",
+              "width": 560,
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "stroke": "$philosopher-socrates",
+              "strokeWidth": 3,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vLJ9d",
+                  "name": "SocratesName",
+                  "fill": "$philosopher-socrates",
+                  "content": "ソクラテス",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "900"
+                },
+                {
+                  "type": "text",
+                  "id": "exGs6",
+                  "name": "SocratesQuote",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "「このブラウザでレスバできると、本当に思ってる？」",
+                  "lineHeight": 1.4,
+                  "fontFamily": "Inter",
+                  "fontSize": 22,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "K2Uby",
+                  "name": "SocratesDesc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "このアプリは Chrome 内蔵 AI（Gemini Nano）が必要だよ。\nSafari や Firefox では動かない。",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "X3Jfhz",
+              "name": "ChromeStamp",
+              "rotation": -3.0000000000000004,
+              "fill": "#FFFFFF",
+              "cornerRadius": 4,
+              "stroke": "$border-strong",
+              "strokeWidth": 2,
+              "padding": [
+                8,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fv2cB",
+                  "name": "ChromeStampText",
+                  "fill": "$text-primary",
+                  "content": "Chrome 専用",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ai6t3",
+              "name": "Steps",
+              "width": 480,
+              "fill": "$bg-card",
+              "cornerRadius": "$radius-lg",
+              "stroke": "$border-strong",
+              "strokeWidth": 2,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wiqsp",
+                  "name": "Step1",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "pRk2j",
+                      "name": "Num",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$accent-primary",
+                      "cornerRadius": 9999,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "d7Sql0",
+                          "name": "N",
+                          "fill": "$text-inverse",
+                          "content": "1",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "dtDIv",
+                      "name": "Text",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Google Chrome をインストール",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "H6k34Y",
+                  "name": "Step2",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "hvp4l",
+                      "name": "Num",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$accent-primary",
+                      "cornerRadius": 9999,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "maLt4",
+                          "name": "N",
+                          "fill": "$text-inverse",
+                          "content": "2",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "J2KXY0",
+                      "name": "Text",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "最新版にアップデート",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CR5Qo",
+                  "name": "Step3",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "N1ygN",
+                      "name": "Num",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$accent-primary",
+                      "cornerRadius": 9999,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "h9i6Sb",
+                          "name": "N",
+                          "fill": "$text-inverse",
+                          "content": "3",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "P4IUl",
+                      "name": "Text",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "このページを Chrome で開き直す",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "FWNQ5",
+      "x": 7480,
+      "y": -1052,
+      "name": "06-LLM未準備",
+      "clip": true,
+      "width": 1280,
+      "height": 800,
+      "fill": "$bg-primary",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "phBFV",
+          "name": "Center",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            0,
+            120
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Uti6f",
+              "name": "KantAvatar",
+              "width": 120,
+              "height": 120,
+              "fill": "#F1F5F9",
+              "cornerRadius": 9999,
+              "stroke": "$philosopher-kant",
+              "strokeWidth": 4,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "hMQUB",
+                  "name": "KantIcon",
+                  "width": 48,
+                  "height": 48,
+                  "icon": "glasses",
+                  "library": "lucide",
+                  "fill": "$philosopher-kant"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VOMjc",
+              "name": "KantSpeech",
+              "width": 560,
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "stroke": "$philosopher-kant",
+              "strokeWidth": 3,
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "zQpIi",
+                  "name": "KantName",
+                  "fill": "$philosopher-kant",
+                  "content": "カント",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "900"
+                },
+                {
+                  "type": "text",
+                  "id": "YLb5a",
+                  "name": "KantQuote",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "「対話には条件がある。まず AI の準備を整えよう。」",
+                  "lineHeight": 1.4,
+                  "fontFamily": "Inter",
+                  "fontSize": 22,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "F2dnc1",
+                  "name": "KantDesc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Chrome 内蔵 AI（Gemini Nano）がまだ使えない状態みたい。\n下の手順で設定してから、もう一度試してね。",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HQU22",
+              "name": "SetupStamp",
+              "rotation": 2,
+              "fill": "#FFFFFF",
+              "cornerRadius": 4,
+              "stroke": "$border-strong",
+              "strokeWidth": 2,
+              "padding": [
+                8,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "F3s1s",
+                  "name": "SetupStampText",
+                  "fill": "$text-primary",
+                  "content": "要セットアップ",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "800"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sywmm",
+              "name": "Steps",
+              "width": 520,
+              "fill": "$bg-card",
+              "cornerRadius": "$radius-lg",
+              "stroke": "$border-strong",
+              "strokeWidth": 2,
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Hu2RA",
+                  "name": "Step1",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "bWrEH",
+                      "name": "Num",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$accent-secondary",
+                      "cornerRadius": 9999,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "wrDVJ",
+                          "name": "N",
+                          "fill": "$text-inverse",
+                          "content": "1",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "j3PBv",
+                      "name": "Text",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Chrome を最新版（128+）にアップデート",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "FZOiv",
+                  "name": "Step2",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "obYPN",
+                      "name": "Num",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$accent-secondary",
+                      "cornerRadius": 9999,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z0Y48G",
+                          "name": "N",
+                          "fill": "$text-inverse",
+                          "content": "2",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "tf7JU",
+                      "name": "Text",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "chrome://flags で「Prompt API for Gemini Nano」を有効化",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Z4IuW",
+                  "name": "Step3",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "KMMkF",
+                      "name": "Num",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$accent-secondary",
+                      "cornerRadius": 9999,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZLmGf",
+                          "name": "N",
+                          "fill": "$text-inverse",
+                          "content": "3",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "JTMen",
+                      "name": "Text",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "chrome://components で「Optimization Guide On Device Model」を更新",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vnAih",
+                  "name": "Step4",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "WBG7A",
+                      "name": "Num",
+                      "width": 28,
+                      "height": 28,
+                      "fill": "$accent-secondary",
+                      "cornerRadius": 9999,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZWsP9",
+                          "name": "N",
+                          "fill": "$text-inverse",
+                          "content": "4",
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "i9FF3i",
+                      "name": "Text",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "ブラウザを再起動してこのページを再読み込み",
+                      "lineHeight": 1.4,
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "j2jfoS",
+              "type": "ref",
+              "ref": "XIc1i",
+              "name": "Retry",
+              "descendants": {
+                "E8WIs": {
+                  "content": "もう一度チェック"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "W2Iok2",
+      "x": 200,
+      "y": 0,
+      "name": "LogoMark",
+      "reusable": true,
+      "width": 64,
+      "height": 52,
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "ZbKCg",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 10,
+          "name": "BubbleLeft",
+          "rotation": -14,
+          "width": 30,
+          "height": 26,
+          "fill": "$battle-red",
+          "cornerRadius": 10,
+          "stroke": "#1A1A1A",
+          "strokeWidth": 3
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 1,
+          "id": "nyxQj",
+          "layoutPosition": "absolute",
+          "x": 6,
+          "y": 30,
+          "name": "TailLeft",
+          "rotation": 45,
+          "fill": "$accent-primary",
+          "width": 8,
+          "height": 8,
+          "stroke": "$border-strong",
+          "strokeWidth": 2
+        },
+        {
+          "type": "frame",
+          "id": "eDcqA",
+          "layoutPosition": "absolute",
+          "x": 22,
+          "y": 4,
+          "name": "BubbleRight",
+          "rotation": 14,
+          "width": 30,
+          "height": 26,
+          "fill": "#FFFFFF",
+          "cornerRadius": 10,
+          "stroke": "$border-strong",
+          "strokeWidth": 2.5
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 1,
+          "id": "L1ge2S",
+          "layoutPosition": "absolute",
+          "x": 40,
+          "y": 24,
+          "name": "TailRight",
+          "rotation": 45,
+          "fill": "#FFFFFF",
+          "width": 8,
+          "height": 8,
+          "stroke": "$border-strong",
+          "strokeWidth": 2
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 2,
+          "id": "P3dHV1",
+          "layoutPosition": "absolute",
+          "x": 18,
+          "y": 16,
+          "name": "Spark1",
+          "rotation": -35,
+          "fill": "$battle-cyan",
+          "width": 14,
+          "height": 4
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 2,
+          "id": "GlqJU",
+          "layoutPosition": "absolute",
+          "x": 24,
+          "y": 20,
+          "name": "Spark2",
+          "rotation": 25,
+          "fill": "$battle-orange",
+          "width": 12,
+          "height": 4
+        },
+        {
+          "type": "frame",
+          "id": "KQD4h",
+          "layoutPosition": "absolute",
+          "x": 16,
+          "y": 14,
+          "name": "VSBadge",
+          "rotation": -6.000000000000001,
+          "width": 24,
+          "height": 18,
+          "fill": "$battle-yellow",
+          "cornerRadius": 4,
+          "stroke": "#1A1A1A",
+          "strokeWidth": 2.5,
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "unb7W",
+              "name": "VSText",
+              "fill": "#1A1A1A",
+              "content": "VS",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Zu21v",
+      "x": 280,
+      "y": 0,
+      "name": "LogoMark-Large",
+      "reusable": true,
+      "width": 120,
+      "height": 100,
+      "layout": "none",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "vIrPu",
+          "layoutPosition": "absolute",
+          "x": 10,
+          "y": 50,
+          "name": "LGSplatCyan",
+          "opacity": 0.4,
+          "rotation": 20,
+          "fill": "$battle-cyan",
+          "width": 50,
+          "height": 30
+        },
+        {
+          "type": "ellipse",
+          "id": "auaB5",
+          "layoutPosition": "absolute",
+          "x": 50,
+          "y": 20,
+          "name": "LGSplatOrange",
+          "opacity": 0.35,
+          "rotation": -10,
+          "fill": "$battle-orange",
+          "width": 70,
+          "height": 40
+        },
+        {
+          "type": "frame",
+          "id": "lATqn",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 30,
+          "name": "LGBubbleLeft",
+          "rotation": -18,
+          "width": 44,
+          "height": 38,
+          "fill": "$battle-red",
+          "cornerRadius": 14,
+          "stroke": "#1A1A1A",
+          "strokeWidth": 3
+        },
+        {
+          "type": "frame",
+          "id": "UcK8r",
+          "layoutPosition": "absolute",
+          "x": 52,
+          "y": 10,
+          "name": "LGBubbleRight",
+          "rotation": 16,
+          "width": 44,
+          "height": 38,
+          "fill": "#FFFFFF",
+          "cornerRadius": 14,
+          "stroke": "#1A1A1A",
+          "strokeWidth": 3
+        },
+        {
+          "type": "text",
+          "id": "h6t9wT",
+          "layoutPosition": "absolute",
+          "x": 38,
+          "y": 34,
+          "name": "LGVSglow",
+          "rotation": -8,
+          "fill": "$battle-cyan",
+          "content": "VS",
+          "fontFamily": "Inter",
+          "fontSize": 22,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "hh1Ut",
+          "layoutPosition": "absolute",
+          "x": 36,
+          "y": 32,
+          "name": "LGVS",
+          "rotation": -8,
+          "fill": "$battle-red",
+          "content": "VS",
+          "fontFamily": "Inter",
+          "fontSize": 22,
+          "fontWeight": "900"
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 2,
+          "id": "sFm84",
+          "layoutPosition": "absolute",
+          "x": 30,
+          "y": 28,
+          "name": "LGSpark1",
+          "rotation": -40,
+          "fill": "#1A1A1A",
+          "width": 20,
+          "height": 4
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 2,
+          "id": "RXiEu",
+          "layoutPosition": "absolute",
+          "x": 58,
+          "y": 38,
+          "name": "LGSpark2",
+          "rotation": 29.999999999999996,
+          "fill": "$battle-orange",
+          "width": 16,
+          "height": 4
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "X6DBJ",
+      "x": 400,
+      "y": 0,
+      "name": "Type/Wordmark",
+      "reusable": true,
+      "width": 200,
+      "height": 56,
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "jidVS",
+          "layoutPosition": "absolute",
+          "x": 58,
+          "y": 16,
+          "name": "WMGlowCyan",
+          "rotation": -5,
+          "fill": "$battle-cyan",
+          "content": "レスバ",
+          "fontFamily": "Inter",
+          "fontSize": 26,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "c289m",
+          "layoutPosition": "absolute",
+          "x": 56,
+          "y": 14,
+          "name": "WMGlowOrange",
+          "rotation": -5,
+          "fill": "$battle-orange",
+          "content": "レスバ",
+          "fontFamily": "Inter",
+          "fontSize": 26,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "jeWuW",
+          "layoutPosition": "absolute",
+          "x": 54,
+          "y": 12,
+          "name": "WMCore",
+          "rotation": -5,
+          "fill": "#1A1A1A",
+          "content": "レスバ",
+          "fontFamily": "Inter",
+          "fontSize": 26,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "nJFsP",
+          "layoutPosition": "absolute",
+          "x": 52,
+          "y": 10,
+          "name": "WMWhite",
+          "rotation": -5,
+          "fill": "$text-inverse",
+          "content": "レスバ",
+          "fontFamily": "Inter",
+          "fontSize": 26,
+          "fontWeight": "900"
+        },
+        {
+          "type": "frame",
+          "id": "EBRAp",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 14,
+          "name": "WMPrefix",
+          "rotation": 4,
+          "fill": "#1A1A1A",
+          "stroke": "$battle-cyan",
+          "strokeWidth": 2,
+          "layout": "vertical",
+          "padding": [
+            4,
+            8
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "a1xcr",
+              "name": "WMPrefixText",
+              "fill": "$text-inverse",
+              "content": "哲学",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "900"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "TpnCe",
+          "layoutPosition": "absolute",
+          "x": 168,
+          "y": 8,
+          "name": "WMBang",
+          "rotation": 8,
+          "fill": "$battle-red",
+          "content": "!!",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fontWeight": "900"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "P461g",
+      "x": 400,
+      "y": 120,
+      "name": "Type/HeroTitle",
+      "reusable": true,
+      "rotation": -6.000000000000001,
+      "width": 680,
+      "height": 220,
+      "layout": "none",
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "COWVm",
+          "layoutPosition": "absolute",
+          "x": 40,
+          "y": 90,
+          "name": "SplatterCyan1",
+          "opacity": 0.35,
+          "rotation": 25,
+          "fill": "$battle-cyan",
+          "width": 80,
+          "height": 50
+        },
+        {
+          "type": "ellipse",
+          "id": "DHzLs",
+          "layoutPosition": "absolute",
+          "x": 380,
+          "y": 60,
+          "name": "SplatterOrange1",
+          "opacity": 0.3,
+          "rotation": -14.999999999999998,
+          "fill": "$battle-orange",
+          "width": 120,
+          "height": 70
+        },
+        {
+          "type": "ellipse",
+          "id": "Hbsje",
+          "layoutPosition": "absolute",
+          "x": 520,
+          "y": 120,
+          "name": "SplatterRed",
+          "opacity": 0.25,
+          "rotation": 40,
+          "fill": "$battle-red",
+          "width": 60,
+          "height": 40
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 3,
+          "id": "y5hTd7",
+          "layoutPosition": "absolute",
+          "x": 20,
+          "y": 150,
+          "name": "SpeedLine1",
+          "opacity": 0.15,
+          "rotation": -12.000000000000002,
+          "fill": "$text-primary",
+          "width": 140,
+          "height": 6
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 3,
+          "id": "wVk1U",
+          "layoutPosition": "absolute",
+          "x": 500,
+          "y": 40,
+          "name": "SpeedLine2",
+          "opacity": 0.25,
+          "rotation": 8,
+          "fill": "$battle-orange",
+          "width": 100,
+          "height": 5
+        },
+        {
+          "type": "frame",
+          "id": "C9Nep",
+          "layoutPosition": "absolute",
+          "x": 200,
+          "y": 0,
+          "name": "PreBanner",
+          "rotation": -2,
+          "fill": "#1A1A1A",
+          "cornerRadius": 2,
+          "stroke": "$battle-cyan",
+          "strokeWidth": 3,
+          "layout": "vertical",
+          "padding": [
+            6,
+            24
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "DJoeS",
+              "name": "PreText",
+              "fill": "$text-inverse",
+              "content": "哲学者と、",
+              "fontFamily": "Inter",
+              "fontSize": 28,
+              "fontWeight": "900"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "GtJ6I",
+          "layoutPosition": "absolute",
+          "x": 122,
+          "y": 58,
+          "name": "GlowCyan",
+          "rotation": -3.0000000000000004,
+          "fill": "$battle-cyan",
+          "content": "レスバ!!",
+          "fontFamily": "Inter",
+          "fontSize": 112,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "yMDyN",
+          "layoutPosition": "absolute",
+          "x": 112,
+          "y": 48,
+          "name": "GlowOrange",
+          "rotation": -3.0000000000000004,
+          "fill": "$battle-orange",
+          "content": "レスバ!!",
+          "fontFamily": "Inter",
+          "fontSize": 112,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "y0Psc",
+          "layoutPosition": "absolute",
+          "x": 108,
+          "y": 44,
+          "name": "GlowBlack",
+          "rotation": -3.0000000000000004,
+          "fill": "#1A1A1A",
+          "content": "レスバ!!",
+          "fontFamily": "Inter",
+          "fontSize": 112,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "e36KqY",
+          "layoutPosition": "absolute",
+          "x": 104,
+          "y": 40,
+          "name": "CoreText",
+          "rotation": -3.0000000000000004,
+          "fill": "$text-inverse",
+          "content": "レスバ!!",
+          "fontFamily": "Inter",
+          "fontSize": 112,
+          "fontWeight": "900"
+        },
+        {
+          "type": "text",
+          "id": "r5hC3r",
+          "layoutPosition": "absolute",
+          "x": 102,
+          "y": 36,
+          "name": "Highlight",
+          "opacity": 0.6,
+          "rotation": -3.0000000000000004,
+          "fill": "$battle-yellow",
+          "content": "レスバ!!",
+          "fontFamily": "Inter",
+          "fontSize": 108,
+          "fontWeight": "900"
+        },
+        {
+          "type": "frame",
+          "id": "ym3Qy",
+          "layoutPosition": "absolute",
+          "x": 520,
+          "y": 30,
+          "name": "FightStamp",
+          "rotation": 12.000000000000002,
+          "fill": "$battle-red",
+          "cornerRadius": 4,
+          "stroke": "#1A1A1A",
+          "strokeWidth": 3,
+          "padding": [
+            6,
+            14
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "SEl9f",
+              "name": "FightText",
+              "fill": "$text-inverse",
+              "content": "FIGHT",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "900"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "a3Owb",
+      "x": 600,
+      "y": 0,
+      "name": "Type/HeroTitle-SVG",
+      "reusable": true,
+      "width": 509,
+      "height": 193,
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "yS7tg",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "name": "HeroImage",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "assets/hero-resuba.png",
+            "mode": "fill"
+          },
+          "width": 509,
+          "height": 193
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "i50nIu",
+      "x": 600,
+      "y": 240,
+      "name": "Type/Wordmark-SVG",
+      "reusable": true,
+      "width": 200,
+      "height": 52,
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "ZpIN4",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "name": "WordmarkImage",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "assets/wordmark.png",
+            "mode": "fit"
+          },
+          "width": 200,
+          "height": 52
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "mqzth",
+      "x": 600,
+      "y": 310,
+      "name": "Type/SelectTitle-SVG",
+      "reusable": true,
+      "width": 560,
+      "height": 120,
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "o8H9sD",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "name": "SelectImage",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "assets/select-title.png",
+            "mode": "fit"
+          },
+          "width": 560,
+          "height": 120
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "e47dPD",
+      "x": 600,
+      "y": 450,
+      "name": "Texture/Grunge",
+      "reusable": true,
+      "opacity": 0.1,
+      "width": 1280,
+      "height": 800,
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "ndFI5",
+          "layoutPosition": "absolute",
+          "x": 0,
+          "y": 0,
+          "name": "GrungeImage",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "assets/grunge-noise.png",
+            "mode": "fill"
+          },
+          "width": 1280,
+          "height": 800
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "accent-primary": {
+      "type": "color",
+      "value": "#E85D4C"
+    },
+    "accent-secondary": {
+      "type": "color",
+      "value": "#E85D4C"
+    },
+    "bg-card": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "bg-muted": {
+      "type": "color",
+      "value": "#F5F5F4"
+    },
+    "bg-primary": {
+      "type": "color",
+      "value": "#FAFAF8"
+    },
+    "border-default": {
+      "type": "color",
+      "value": "#E7E5E4"
+    },
+    "border-strong": {
+      "type": "color",
+      "value": "#1A1A1A"
+    },
+    "radius-lg": {
+      "type": "number",
+      "value": 16
+    },
+    "radius-md": {
+      "type": "number",
+      "value": 12
+    },
+    "radius-pill": {
+      "type": "number",
+      "value": 9999
+    },
+    "semantic-info": {
+      "type": "color",
+      "value": "#EFF6FF"
+    },
+    "semantic-info-text": {
+      "type": "color",
+      "value": "#1E40AF"
+    },
+    "semantic-warning": {
+      "type": "color",
+      "value": "#FEF3C7"
+    },
+    "semantic-warning-text": {
+      "type": "color",
+      "value": "#92400E"
+    },
+    "space-lg": {
+      "type": "number",
+      "value": 24
+    },
+    "space-md": {
+      "type": "number",
+      "value": 16
+    },
+    "space-sm": {
+      "type": "number",
+      "value": 8
+    },
+    "space-xl": {
+      "type": "number",
+      "value": 32
+    },
+    "text-inverse": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#1A1A1A"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#57534E"
+    },
+    "text-tertiary": {
+      "type": "color",
+      "value": "#A8A29E"
+    },
+    "philosopher-kant": {
+      "type": "color",
+      "value": "#475569"
+    },
+    "philosopher-nietzsche": {
+      "type": "color",
+      "value": "#DC2626"
+    },
+    "philosopher-plato": {
+      "type": "color",
+      "value": "#7C3AED"
+    },
+    "philosopher-socrates": {
+      "type": "color",
+      "value": "#2563EB"
+    },
+    "battle-cyan": {
+      "type": "color",
+      "value": "#00E5FF"
+    },
+    "battle-orange": {
+      "type": "color",
+      "value": "#FF6B00"
+    },
+    "battle-red": {
+      "type": "color",
+      "value": "#FF1744"
+    },
+    "battle-yellow": {
+      "type": "color",
+      "value": "#FFE100"
+    }
+  }
+}

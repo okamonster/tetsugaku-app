@@ -1,0 +1,20 @@
+{
+  "name": "@repo/common",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./philosophers": "./src/philosophers.ts",
+    "./routes": "./src/routes.ts",
+    "./topics": "./src/topics.ts",
+    "./prompts": "./src/prompts.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "5.9.2"
+  }
+}

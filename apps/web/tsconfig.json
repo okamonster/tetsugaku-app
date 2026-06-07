@@ -1,19 +1,29 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
+  "extends": "@repo/typescript-config/base.json",
+  "include": ["**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "next"
-      }
+    "target": "ES2022",
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "paths": {
+      "#/*": ["./src/*"],
+      "@/*": ["./src/*"]
+    },
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": [
+      "./worker-configuration.d.ts",
+      "node",
+      "vite/client",
+      "dom-chromium-ai"
     ],
-    "strictNullChecks": true
-  },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "next-env.d.ts",
-    "next.config.js",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules"]
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  }
 }
