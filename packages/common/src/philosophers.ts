@@ -7,6 +7,7 @@ export type Philosopher = {
   description: string
   color: string
   avatarBg: string
+  avatarSrc: string
   rotation: number
 }
 
@@ -18,6 +19,7 @@ export const PHILOSOPHERS: Philosopher[] = [
     description: '問答法で論点を剥がす',
     color: '#2563EB',
     avatarBg: '#DBEAFE',
+    avatarSrc: '/philosophers/ソクラテス.png',
     rotation: -3,
   },
   {
@@ -27,6 +29,7 @@ export const PHILOSOPHERS: Philosopher[] = [
     description: 'イデア論・正義を軸に論じる',
     color: '#7C3AED',
     avatarBg: '#EDE9FE',
+    avatarSrc: '/philosophers/プラトン.png',
     rotation: 0,
   },
   {
@@ -36,6 +39,7 @@ export const PHILOSOPHERS: Philosopher[] = [
     description: '義務論・理性を重視',
     color: '#475569',
     avatarBg: '#F1F5F9',
+    avatarSrc: '/philosophers/カント.png',
     rotation: 2,
   },
   {
@@ -45,6 +49,7 @@ export const PHILOSOPHERS: Philosopher[] = [
     description: '挑発的に価値観を問い直す',
     color: '#DC2626',
     avatarBg: '#FEE2E2',
+    avatarSrc: '/philosophers/ニーチェ.png',
     rotation: -2,
   },
 ]

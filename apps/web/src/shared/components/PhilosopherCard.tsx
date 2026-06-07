@@ -1,5 +1,5 @@
-import { User } from 'lucide-react'
 import type { Philosopher } from '@repo/common/philosophers'
+import { PhilosopherAvatar } from '#/shared/components/PhilosopherAvatar'
 
 type PhilosopherCardProps = {
   philosopher: Philosopher
@@ -28,12 +28,7 @@ export function PhilosopherCard({
       }}
       aria-pressed={selected}
     >
-      <div
-        className="flex h-20 w-20 items-center justify-center rounded-full"
-        style={{ backgroundColor: philosopher.avatarBg, border: `2px solid ${philosopher.color}` }}
-      >
-        <User className="h-10 w-10 text-text-tertiary" aria-hidden="true" />
-      </div>
+      <PhilosopherAvatar philosopher={philosopher} className="h-20 w-20" />
       <h3 className="font-display text-center text-[22px] font-black text-text-primary">
         {philosopher.name}
       </h3>
