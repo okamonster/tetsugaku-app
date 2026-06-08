@@ -1,4 +1,9 @@
 import { redirect } from '@tanstack/react-router'
+import {
+  DEFAULT_BATTLE_DURATION,
+  isBattleDurationSeconds,
+  type BattleDurationSeconds,
+} from '@repo/common/battle'
 import { isPhilosopherId } from '@repo/common/philosophers'
 import { ROUTES } from '@repo/common/routes'
 import { isChrome } from '#/core/browser/is-chrome'
@@ -22,4 +27,21 @@ export function requireTopic(topic: string | undefined, philosopherId?: string) 
       search: philosopherId ? { philosopherId } : {},
     })
   }
+}
+
+export function parseBattleDuration(
+  value: unknown,
+): BattleDurationSeconds {
+  if (typeof value === 'number' && isBattleDurationSeconds(value)) {
+    return value
+  }
+
+  if (typeof value === 'string') {
+    const parsed = Number(value)
+    if (isBattleDurationSeconds(parsed)) {
+      return parsed
+    }
+  }
+
+  return DEFAULT_BATTLE_DURATION
 }

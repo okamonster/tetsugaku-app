@@ -75,3 +75,4 @@ export async function promptPhilosopherReply(
 ): Promise<string> {
   return promptAndCollect(session, buildUserDebatePrompt(topic, userMessage), signal)
 }
+

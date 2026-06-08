@@ -18,8 +18,8 @@ const STEPS = [
   },
   {
     step: 3,
-    title: '好きなだけ論じる',
-    description: '勝敗なし。気になったらずっと続けてOK',
+    title: '制限時間内に論破',
+    description: '5分 / 8分 / 10分。降参・敗北宣言・審判で勝敗決定',
   },
 ] as const
 

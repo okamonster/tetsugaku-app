@@ -5,12 +5,18 @@ import {
   checkLlmAvailability,
   isLlmReadyForChat,
 } from '#/core/llm/check-availability'
-import { requireChrome, requirePhilosopherId, requireTopic } from '#/core/routing/guards'
+import {
+  parseBattleDuration,
+  requireChrome,
+  requirePhilosopherId,
+  requireTopic,
+} from '#/core/routing/guards'
 import { ChatPage } from '#/features/chat/components/ChatPage'
 
 type ChatsSearch = {
   philosopherId?: string
   topic?: string
+  duration?: number
 }
 
 export const Route = createFileRoute('/chats/')({
@@ -18,6 +24,12 @@ export const Route = createFileRoute('/chats/')({
     philosopherId:
       typeof search.philosopherId === 'string' ? search.philosopherId : undefined,
     topic: typeof search.topic === 'string' ? search.topic : undefined,
+    duration:
+      typeof search.duration === 'number'
+        ? search.duration
+        : typeof search.duration === 'string'
+          ? Number(search.duration)
+          : undefined,
   }),
   beforeLoad: async ({ search }) => {
     requireChrome()
@@ -35,6 +47,12 @@ export const Route = createFileRoute('/chats/')({
 })
 
 function ChatsRoute() {
-  const { philosopherId, topic } = Route.useSearch()
-  return <ChatPage philosopherId={philosopherId as PhilosopherId} topic={topic!} />
+  const { philosopherId, topic, duration } = Route.useSearch()
+  return (
+    <ChatPage
+      philosopherId={philosopherId as PhilosopherId}
+      topic={topic!}
+      duration={parseBattleDuration(duration)}
+    />
+  )
 }

@@ -1,5 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
+import {
+  DEFAULT_BATTLE_DURATION,
+  formatBattleDuration,
+  type BattleDurationSeconds,
+} from '@repo/common/battle'
 import { getPhilosopherById, type PhilosopherId } from '@repo/common/philosophers'
 import { ROUTES } from '@repo/common/routes'
 import {
@@ -10,6 +15,7 @@ import {
 import { ButtonOutline } from '#/shared/components/ButtonOutline'
 import { ButtonPrimary } from '#/shared/components/ButtonPrimary'
 import { CategoryChip } from '#/shared/components/CategoryChip'
+import { DurationChip } from '#/shared/components/DurationChip'
 import { PhilosopherBadge } from '#/shared/components/PhilosopherBadge'
 import { TopicListItem } from '#/shared/components/TopicListItem'
 
@@ -20,11 +26,18 @@ type TopicsPageProps = {
 const PLACEHOLDER =
   '例：SNSで他人の生活と比べてしまうのは自然なこと？'
 
+const DURATION_OPTIONS = [
+  { seconds: 300 as BattleDurationSeconds, minutes: 5 as const, subtitle: 'スタンダード' },
+  { seconds: 480 as BattleDurationSeconds, minutes: 8 as const, subtitle: 'じっくり' },
+  { seconds: 600 as BattleDurationSeconds, minutes: 10 as const, subtitle: '長期戦' },
+] as const
+
 export function TopicsPage({ philosopherId }: TopicsPageProps) {
   const navigate = useNavigate()
   const philosopher = getPhilosopherById(philosopherId as PhilosopherId)
   const [topicText, setTopicText] = useState('')
   const [selectedCategory, setSelectedCategory] = useState<TopicCategoryId>('relationships')
+  const [duration, setDuration] = useState<BattleDurationSeconds>(DEFAULT_BATTLE_DURATION)
 
   if (!philosopher) return null
 
@@ -35,7 +48,7 @@ export function TopicsPage({ philosopherId }: TopicsPageProps) {
     if (!resolvedTopic) return
     navigate({
       to: ROUTES.chats,
-      search: { philosopherId, topic: resolvedTopic },
+      search: { philosopherId, topic: resolvedTopic, duration },
     })
   }
 
@@ -47,7 +60,7 @@ export function TopicsPage({ philosopherId }: TopicsPageProps) {
         <PhilosopherBadge philosopher={philosopher} compact />
       </header>
 
-      <main className="mx-auto flex max-w-[720px] flex-col items-center gap-7 px-6 py-8 md:px-[120px]">
+      <main className="mx-auto flex max-w-[720px] flex-col items-center gap-5 px-6 py-6 md:px-[120px]">
         <section className="flex w-full flex-col gap-3">
           <label htmlFor="topic-input" className="text-[15px] font-semibold text-text-primary">
             自由に書く
@@ -57,9 +70,25 @@ export function TopicsPage({ philosopherId }: TopicsPageProps) {
             value={topicText}
             onChange={(e) => setTopicText(e.target.value)}
             placeholder={PLACEHOLDER}
-            rows={5}
+            rows={4}
             className="w-full resize-none rounded-2xl border border-border-default bg-bg-card p-4 text-[15px] leading-relaxed text-text-primary outline-none placeholder:text-text-tertiary focus:border-accent-primary"
           />
+        </section>
+
+        <section className="flex w-full items-center justify-between gap-4">
+          <span className="text-[15px] font-semibold text-text-primary">制限時間</span>
+          <div className="flex flex-wrap items-center justify-end gap-2">
+            {DURATION_OPTIONS.map((option) => (
+              <DurationChip
+                key={option.seconds}
+                minutes={option.minutes}
+                seconds={option.seconds}
+                subtitle={option.subtitle}
+                selected={duration === option.seconds}
+                onClick={() => setDuration(option.seconds)}
+              />
+            ))}
+          </div>
         </section>
 
         <div className="flex w-full items-center gap-4">
@@ -96,7 +125,7 @@ export function TopicsPage({ philosopherId }: TopicsPageProps) {
           onClick={handleStart}
           className={resolvedTopic ? '' : 'pointer-events-none opacity-50'}
         >
-          このお題でレスバ開始 →
+          {formatBattleDuration(duration)}バトル開始!! →
         </ButtonPrimary>
       </main>
     </div>

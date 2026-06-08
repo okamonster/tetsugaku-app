@@ -1,5 +1,5 @@
+import { DEFEAT_MARKER } from './battle.js'
 import type { PhilosopherId } from './philosophers.js'
-
 const PERSONA_TRAITS: Record<PhilosopherId, string> = {
   socrates: `ソクラテスとして振る舞う。
 - 思想の核: 無知の知、問答法（エレンコス）、「審議されない人生は生きるに値しない」
@@ -63,11 +63,16 @@ const CONSISTENCY_RULES = `## 立場の一貫性（最重要）
 - 宣言した立場を維持したまま、反論・問い返し・再論をする
 - 安易に「確かにその通り」と相手に迎合しない`
 
+const DEFEAT_RULES = `## 敗北宣言（バトル終了）
+- これは時間制バトルである。ユーザーの論点があなたの宣言した立場を完全に崩したと、正直に判断した場合のみ、一度だけ敗北宣言できる
+- 敗北宣言するときは、発言の先頭に必ず「${DEFEAT_MARKER}」を付け、その後に短い敗北の言葉を続ける（2〜3文まで）
+- 安易な敗北・部分的な譲歩・「まあそうかも」程度では敗北宣言しない
+- 敗北宣言したらそれ以上論じない`
+
 const SHARED_RULES = `## 形式
 - 現代日本語で話す（古文・洋語の引用は最小限）
 - 1回の発言は 2〜5 文程度。長文講義はしない
 - ユーザーの人格を侮辱しない。攻撃は「考え方・前提・価値観」に向ける
-- 勝敗判定はしない。論点を深めることが目的
 - 絵文字・マークダウン・箇条書きは使わない`
 
 function buildTopicAnchor(topic: string): string {
@@ -92,6 +97,8 @@ ${TOPIC_RULES}
 ${PERSONA_TRAITS[philosopherId]}
 
 ${CONSISTENCY_RULES}
+
+${DEFEAT_RULES}
 
 ${SHARED_RULES}`
 }
@@ -121,5 +128,7 @@ ${userMessage}
 - ユーザーが脱線した場合: お題に引き戻せ
 - 以前の自分の発言と矛盾する内容を出すな
 - お題と無関係な抽象論・別テーマ・思想史の脱線は禁止
-- 相談相手・アドバイス・慰めになるな`
+- 相談相手・アドバイス・慰めになるな
+- ユーザーの論点があなたの立場を完全に崩した場合のみ、先頭に「${DEFEAT_MARKER}」を付けて敗北宣言できる`
 }
+

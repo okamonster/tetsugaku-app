@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TopicsIndexRouteImport } from './routes/topics/index'
+import { Route as ResultsIndexRouteImport } from './routes/results/index'
 import { Route as PhilosophersIndexRouteImport } from './routes/philosophers/index'
 import { Route as ChatsIndexRouteImport } from './routes/chats/index'
 import { Route as UnsupportedLlmRouteImport } from './routes/unsupported/llm'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const TopicsIndexRoute = TopicsIndexRouteImport.update({
   id: '/topics/',
   path: '/topics/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultsIndexRoute = ResultsIndexRouteImport.update({
+  id: '/results/',
+  path: '/results/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PhilosophersIndexRoute = PhilosophersIndexRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/unsupported/llm': typeof UnsupportedLlmRoute
   '/chats/': typeof ChatsIndexRoute
   '/philosophers/': typeof PhilosophersIndexRoute
+  '/results/': typeof ResultsIndexRoute
   '/topics/': typeof TopicsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/unsupported/llm': typeof UnsupportedLlmRoute
   '/chats': typeof ChatsIndexRoute
   '/philosophers': typeof PhilosophersIndexRoute
+  '/results': typeof ResultsIndexRoute
   '/topics': typeof TopicsIndexRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/unsupported/llm': typeof UnsupportedLlmRoute
   '/chats/': typeof ChatsIndexRoute
   '/philosophers/': typeof PhilosophersIndexRoute
+  '/results/': typeof ResultsIndexRoute
   '/topics/': typeof TopicsIndexRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/unsupported/llm'
     | '/chats/'
     | '/philosophers/'
+    | '/results/'
     | '/topics/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/unsupported/llm'
     | '/chats'
     | '/philosophers'
+    | '/results'
     | '/topics'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/unsupported/llm'
     | '/chats/'
     | '/philosophers/'
+    | '/results/'
     | '/topics/'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   UnsupportedLlmRoute: typeof UnsupportedLlmRoute
   ChatsIndexRoute: typeof ChatsIndexRoute
   PhilosophersIndexRoute: typeof PhilosophersIndexRoute
+  ResultsIndexRoute: typeof ResultsIndexRoute
   TopicsIndexRoute: typeof TopicsIndexRoute
 }
 
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/topics'
       fullPath: '/topics/'
       preLoaderRoute: typeof TopicsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/results/': {
+      id: '/results/'
+      path: '/results'
+      fullPath: '/results/'
+      preLoaderRoute: typeof ResultsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/philosophers/': {
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   UnsupportedLlmRoute: UnsupportedLlmRoute,
   ChatsIndexRoute: ChatsIndexRoute,
   PhilosophersIndexRoute: PhilosophersIndexRoute,
+  ResultsIndexRoute: ResultsIndexRoute,
   TopicsIndexRoute: TopicsIndexRoute,
 }
 export const routeTree = rootRouteImport

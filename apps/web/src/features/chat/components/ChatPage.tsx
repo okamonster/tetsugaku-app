@@ -1,26 +1,29 @@
 import { useEffect, useRef } from 'react'
 import { Send } from 'lucide-react'
+import type { BattleDurationSeconds } from '@repo/common/battle'
 import { getPhilosopherById, type PhilosopherId } from '@repo/common/philosophers'
 import { ROUTES } from '@repo/common/routes'
-import { useChat } from '#/features/chat/hooks/useChat'
+import { useBattle } from '#/features/chat/hooks/useBattle'
 import { AlertWarning } from '#/shared/components/AlertWarning'
 import { ButtonOutline } from '#/shared/components/ButtonOutline'
+import { ButtonSurrender } from '#/shared/components/ButtonSurrender'
 import { ChatLoadingBubble } from '#/shared/components/ChatLoadingBubble'
 import { ModelDownloadPanel } from '#/shared/components/ModelDownloadPanel'
 import { ChatMessagePhilosopher } from '#/shared/components/ChatMessagePhilosopher'
 import { ChatMessageUser } from '#/shared/components/ChatMessageUser'
-import { PhilosopherBadge } from '#/shared/components/PhilosopherBadge'
+import { TimerBadge } from '#/shared/components/TimerBadge'
 import { TopicBadge } from '#/shared/components/TopicBadge'
 
 type ChatPageProps = {
   philosopherId: PhilosopherId
   topic: string
+  duration: BattleDurationSeconds
 }
 
 const INPUT_MIN_HEIGHT = 52
 const INPUT_MAX_HEIGHT = 160
 
-export function ChatPage({ philosopherId, topic }: ChatPageProps) {
+export function ChatPage({ philosopherId, topic, duration }: ChatPageProps) {
   const philosopher = getPhilosopherById(philosopherId)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -30,6 +33,9 @@ export function ChatPage({ philosopherId, topic }: ChatPageProps) {
   const {
     messages,
     input,
+    remainingSeconds,
+    phase,
+    isTimerActive,
     isInitializing,
     isResponding,
     isDownloadingModel,
@@ -37,8 +43,9 @@ export function ChatPage({ philosopherId, topic }: ChatPageProps) {
     error,
     setInput,
     sendMessage,
+    surrender,
     retry,
-  } = useChat(philosopherId, topic)
+  } = useBattle(philosopherId, topic, duration)
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -57,6 +64,8 @@ export function ChatPage({ philosopherId, topic }: ChatPageProps) {
   }, [input])
 
   useEffect(() => {
+    if (phase !== 'fighting') return
+
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
       event.preventDefault()
       event.returnValue = ''
@@ -64,24 +73,45 @@ export function ChatPage({ philosopherId, topic }: ChatPageProps) {
 
     window.addEventListener('beforeunload', handleBeforeUnload)
     return () => window.removeEventListener('beforeunload', handleBeforeUnload)
-  }, [])
+  }, [phase])
 
   if (!philosopher) return null
 
-  const canSend =
-    input.trim().length > 0 && !isInitializing && !isResponding && !error
+  const isInputDisabled =
+    phase !== 'fighting' || isInitializing || isResponding || Boolean(error)
+  const canSend = input.trim().length > 0 && !isInputDisabled
+  const showTimerUrgent = isTimerActive && remainingSeconds <= 30
 
   return (
-    <div className="flex min-h-screen flex-col bg-bg-primary">
-      <header className="flex h-[72px] items-center justify-between gap-4 border-b-2 border-border-strong px-6 md:px-12">
-        <ButtonOutline to={ROUTES.topics} search={{ philosopherId }}>
-          ← 終了
-        </ButtonOutline>
-        <PhilosopherBadge philosopher={philosopher} />
-        <TopicBadge topic={topic} />
-      </header>
+    <div className="flex h-dvh flex-col overflow-hidden bg-bg-primary">
+      <div className="z-20 shrink-0 bg-bg-primary">
+        <header className="flex min-h-[88px] items-center justify-between gap-4 border-b-2 border-border-strong px-6 py-3 md:px-12">
+          <ButtonOutline
+            to={ROUTES.topics}
+            search={{ philosopherId }}
+          >
+            ← 終了
+          </ButtonOutline>
 
-      <AlertWarning message="⚠ 会話は保存されません。リロードしたら消えるよ" />
+          <div className="flex flex-col items-center gap-1.5">
+            <p
+              className="text-base font-extrabold"
+              style={{ color: philosopher.color }}
+            >
+              vs {philosopher.name}
+            </p>
+            <TimerBadge
+              remainingSeconds={remainingSeconds}
+              urgent={showTimerUrgent}
+              preparing={!isTimerActive && phase === 'fighting'}
+            />
+          </div>
+
+          <TopicBadge topic={topic} />
+        </header>
+
+        <AlertWarning message="⚠ 会話は保存されません。降参すると即敗北、時間切れは審判が決める" />
+      </div>
 
       <main className="mx-auto flex w-full max-w-[960px] flex-1 flex-col gap-5 overflow-y-auto px-6 py-6 md:px-[120px]">
         {messages.map((message) =>
@@ -120,7 +150,7 @@ export function ChatPage({ philosopherId, topic }: ChatPageProps) {
         <div ref={messagesEndRef} />
       </main>
 
-      <footer className="border-t border-border-default px-6 py-4 md:px-12">
+      <footer className="z-20 shrink-0 border-t border-border-default bg-bg-primary px-6 py-4 md:px-12">
         <form
           className="mx-auto max-w-[960px]"
           onSubmit={(event) => {
@@ -129,6 +159,11 @@ export function ChatPage({ philosopherId, topic }: ChatPageProps) {
           }}
         >
           <div className="flex items-end gap-3">
+            <ButtonSurrender
+              onClick={surrender}
+              disabled={isInputDisabled || !isTimerActive}
+            />
+
             <label htmlFor="chat-input" className="sr-only">
               反論を送る
             </label>
@@ -165,7 +200,7 @@ export function ChatPage({ philosopherId, topic }: ChatPageProps) {
                 if (canSend) void sendMessage()
               }}
               placeholder="反論を送る..."
-              disabled={isInitializing || isResponding}
+              disabled={isInputDisabled}
               className="min-h-[52px] flex-1 resize-none overflow-y-auto rounded-2xl border border-border-default bg-bg-card px-4 py-3 text-[15px] leading-relaxed text-text-primary outline-none placeholder:text-text-tertiary focus:border-accent-primary disabled:opacity-60"
             />
             <button

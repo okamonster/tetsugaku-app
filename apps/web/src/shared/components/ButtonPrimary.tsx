@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 type ButtonPrimaryProps = {
   children: ReactNode
   to?: string
+  search?: Record<string, string | number>
   type?: 'button' | 'submit'
   onClick?: () => void
   className?: string
@@ -15,13 +16,14 @@ const baseClassName =
 export function ButtonPrimary({
   children,
   to,
+  search,
   type = 'button',
   onClick,
   className = '',
 }: ButtonPrimaryProps) {
   if (to) {
     return (
-      <Link to={to} className={`${baseClassName} ${className}`}>
+      <Link to={to} search={search} className={`${baseClassName} ${className}`}>
         {children}
       </Link>
     )
