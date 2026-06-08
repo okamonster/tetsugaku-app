@@ -19,7 +19,7 @@ const STEPS = [
   {
     step: 3,
     title: '制限時間内に論破',
-    description: '5分 / 8分 / 10分。降参・敗北宣言・審判で勝敗決定',
+    description: '5分 / 8分 / 10分。時間内に論理を突き崩せ。降参・時間切れは敗北',
   },
 ] as const
 

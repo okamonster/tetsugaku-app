@@ -3,7 +3,6 @@ import { useNavigate } from '@tanstack/react-router'
 import {
   containsDefeatMarker,
   getDefaultResultComment,
-  judgeBattleFast,
   stripDefeatMarker,
   type BattleDurationSeconds,
   type BattleEndReason,
@@ -109,18 +108,15 @@ export function useBattle(
     endBattleRef.current = finishBattle
   }, [finishBattle])
 
-  const runJudgeAndFinish = useCallback(() => {
+  const runTimeUpAndFinish = useCallback(() => {
     if (phaseRef.current !== 'fighting') return
 
     abortRef.current?.abort()
-
-    const debateMessages = messagesRef.current.map((message) => ({
-      role: message.role,
-      text: message.text,
-    }))
-
-    const verdict = judgeBattleFast(debateMessages)
-    endBattleRef.current(verdict.winner, 'time_up_judge', verdict.reason)
+    endBattleRef.current(
+      'philosopher',
+      'time_up',
+      getDefaultResultComment('time_up', 'philosopher'),
+    )
   }, [])
 
   useEffect(() => {
@@ -130,7 +126,7 @@ export function useBattle(
       setRemainingSeconds((current) => {
         if (current <= 1) {
           window.clearInterval(timerId)
-          runJudgeAndFinish()
+          runTimeUpAndFinish()
           return 0
         }
         return current - 1
@@ -138,7 +134,7 @@ export function useBattle(
     }, 1000)
 
     return () => window.clearInterval(timerId)
-  }, [isTimerActive, phase, runJudgeAndFinish])
+  }, [isTimerActive, phase, runTimeUpAndFinish])
 
   const handlePhilosopherReply = useCallback(
     (reply: string) => {

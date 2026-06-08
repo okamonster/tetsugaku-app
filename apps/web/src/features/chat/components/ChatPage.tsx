@@ -110,7 +110,7 @@ export function ChatPage({ philosopherId, topic, duration }: ChatPageProps) {
           <TopicBadge topic={topic} />
         </header>
 
-        <AlertWarning message="⚠ 会話は保存されません。降参すると即敗北、時間切れは審判が決める" />
+        <AlertWarning message="⚠ 会話は保存されません。降参・時間切れは即敗北" />
       </div>
 
       <main className="mx-auto flex w-full max-w-[960px] flex-1 flex-col gap-5 overflow-y-auto px-6 py-6 md:px-[120px]">
